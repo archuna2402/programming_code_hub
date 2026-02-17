@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | PyZone</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='app-logo.png') }}" alt="Logo" height="40">
+      <span>PyZone</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1 class="hero-title">Login</h1>
+    <p class="hero-sub">Enter your details to continue</p>
+
+    <!-- ✅ IMPORTANT: method POST + action /login -->
+    <div class="card">
+      <form method="POST" action="/login">
+        
+        <label class="label">Register Number</label>
+        <!-- ✅ IMPORTANT: name="regno" -->
+        <input class="input" type="text" name="regno" placeholder="Enter reg no" required>
+
+        <label class="label">Password</label>
+        <!-- ✅ IMPORTANT: name="password" -->
+        <input class="input" type="password" name="password" placeholder="Enter password" required>
+
+        <!-- ✅ show error if login fails -->
+        {% if error %}
+          <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <button class="btn primary-btn full" type="submit">Login</button>
+
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

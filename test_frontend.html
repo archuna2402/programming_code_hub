@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Test</title>
+</head>
+<body>
+    <h2>Test Submit API</h2>
+    <button onclick="sendData()">Send Data</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        async function sendData() {
+            const response = await fetch("http://127.0.0.1:5000/api/submit_answer", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    level: 1,
+                    answers: [
+                        { answer: "Python is powerful." },
+                        { answer: "It is easy." },
+                        { answer: "Used for AI." },
+                        { answer: "Used for web." },
+                        { answer: "Fast development." },
+                        { answer: "Readable code." },
+                        { answer: "Open source." },
+                        { answer: "Large community." }
+                    ]
+                })
+            });
+
+            const data = await response.json();
+            document.getElementById("result").innerText = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>

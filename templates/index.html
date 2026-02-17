@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyZone</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="{{ url_for('static', filename='app-logo.png') }}" alt="App logo">
+      <span class="brand-name">PyZone</span>
+    </div>
+
+    <div class="top-actions">
+      <a class="chip" href="/dashboard">Dashboard</a>
+      <a class="chip outline" href="/login">Login</a>
+    </div>
+  </header>
+
+  <!-- CENTER HERO -->
+  <main class="hero">
+    <div class="hero-box">
+      <h1>We Learn <span>Python</span></h1>
+      <p>Start small. Think big. Code Python.<br>Grow with every line of code.</p>
+
+      <a class="btn" href="/login">Get Start</a>
+    </div>
+  </main>
+
+</body>
+</html>
